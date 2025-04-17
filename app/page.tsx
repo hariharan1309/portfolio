@@ -12,7 +12,7 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background max-sm:p-4 max-xl:p-6">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center gap-8">
         <motion.div
@@ -22,13 +22,13 @@ export default function Home() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold">
-            Hi, I'm Hariharan A
+           {` Hi, I'm Hariharan A`}
           </h1>
           <p className="text-lg text-muted-foreground">
-            I'm a Front End Engineer with expertise in Next.js, TypeScript,
+           {` I'm a Front End Engineer with expertise in Next.js, TypeScript,
             TailwindCSS, React.js and RizzUI. Dedicated to maintaining robust
             web applications while implementing innovative features that elevate
-            user experience.
+            user experience.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="w-full sm:w-auto">Download CV</Button>
@@ -69,20 +69,20 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-8 text-center">About me</h2>
             <div className="space-y-6">
               <p>
-                I'm a passionate Front End Engineer with expertise in Next.js,
+                {`I'm a passionate Front End Engineer with expertise in Next.js,
                 TypeScript, TailwindCSS, React.js and RizzUI. I'm dedicated to
                 maintaining robust web applications while implementing
-                innovative features that elevate user experience.
+                innovative features that elevate user experience.`}
               </p>
               <p>
-                My journey in web development began during my engineering
+                {`My journey in web development began during my engineering
                 studies, and I've since grown my skills through internships and
                 professional roles. I enjoy collaborating with teams to build
-                efficient, user-friendly applications that solve real problems.
+                efficient, user-friendly applications that solve real problems.`}
               </p>
               <p>
-                I'm constantly learning and improving my skills to stay current
-                with the latest web development technologies and best practices.
+                {`I'm constantly learning and improving my skills to stay current
+                with the latest web development technologies and best practices.`}
               </p>
               <div className="pt-4">
                 <h3 className="text-xl font-semibold mb-4">
@@ -100,7 +100,7 @@ export default function Home() {
                 </ul>
               </div>
               <p className="pt-4">
-                I'm available for freelance work and new opportunities.
+               {` I'm available for freelance work and new opportunities.`}
               </p>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function Home() {
                           KPR Institute of Engineering and Technology
                         </p>
                       </div>
-                      <p className="text-muted-foreground">08/2019 - 04/2023</p>
+                      <p className="text-muted-foreground">Aug 2019 - Apr 2023</p>
                     </div>
                   </div>
                 </div>
@@ -308,14 +308,14 @@ export default function Home() {
 
       {/* Contact Section */}
       <section
-        className="container mx-auto px-4 py-16 md:py-24 bg-muted/30"
+        className="container mx-auto px-4 py-16 md:py-24 bg-muted/30 pb-4 md:pb-8"
         id="contact"
       >
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Get in touch</h2>
           <p className="mb-12">
-            Feel free to reach out if you're looking for a developer, have a
-            query, or simply want to connect.
+            {`Feel free to reach out if you're looking for a developer, have a
+            query, or want to connect.`}
           </p>
 
           <div className="flex flex-col items-center gap-4 mb-12">
@@ -355,11 +355,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="container mx-auto p-4 text-center text-muted-foreground">
-        <p>© 2024 | Designed and coded with ❤️ by Hariharan A</p>
-      </footer>
     </main>
   );
 }
@@ -377,7 +372,7 @@ const experiences = [
   {
     role: "Frontend Engineer",
     company: "GymForce Technologies",
-    period: "09/2024 - Present",
+    period: "Sep 2024 - Present",
     logo: <span className="text-xl">GF</span>,
     responsibilities: [
       "Maintaining and Enhancing web applications while delivering new features for improved user experience.",
@@ -387,7 +382,7 @@ const experiences = [
   {
     role: "Frontend Developer - Intern",
     company: "GymForce Technologies",
-    period: "06/2024 - 09/2024",
+    period: "Jun 2024 - Sep 2024",
     logo: <span className="text-xl">GF</span>,
     responsibilities: [
       "Collaborated closely with developers to build and enhance web applications, gaining hands-on experience with industry-standard development workflows.",
@@ -396,7 +391,7 @@ const experiences = [
   {
     role: "Next JS Developer - Intern",
     company: "Achintya Solutions",
-    period: "03/2024 - 06/2024",
+    period: "Mar 2024 - Jun 2024",
     logo: <span className="text-xl">AS</span>,
     responsibilities: [
       "Assisting the team in building products as per the requirement, and learning along with the process.",
