@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,12 +8,19 @@ import Image from "next/image";
 import Link from "next/link";
 import StayCationImg from "@/public/stayCation.png";
 import ProfileImg from "@/public/Profile.jpg";
+import ScrollAnimation from "@/components/ScrollAnimation";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center gap-8">
-        <div className="flex-1 space-y-6">
+        <motion.div
+          className="flex-1 space-y-6"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className="text-4xl md:text-5xl font-bold">
             Hi, I'm Hariharan A
           </h1>
@@ -34,249 +43,268 @@ export default function Home() {
               </Button>
             </div>
           </div>
-        </div>
-        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-muted">
+        </motion.div>
+        <motion.div
+          className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-muted"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           <Image
             src={ProfileImg}
             alt="Hariharan's profile"
             fill
             className="object-cover size-80"
           />
-        </div>
+        </motion.div>
       </section>
 
       {/* About Section */}
-      <section
-        className="container mx-auto lg:max-w-[70%] px-4 py-12 md:py-20"
-        id="about"
-      >
-        <div className=" mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">About me</h2>
-          <div className="space-y-6">
-            <p>
-              I'm a passionate Front End Engineer with expertise in Next.js,
-              TypeScript, TailwindCSS, React.js and RizzUI. I'm dedicated to
-              maintaining robust web applications while implementing innovative
-              features that elevate user experience.
-            </p>
-            <p>
-              My journey in web development began during my engineering studies,
-              and I've since grown my skills through internships and
-              professional roles. I enjoy collaborating with teams to build
-              efficient, user-friendly applications that solve real problems.
-            </p>
-            <p>
-              I'm constantly learning and improving my skills to stay current
-              with the latest web development technologies and best practices.
-            </p>
-            <div className="pt-4">
-              <h3 className="text-xl font-semibold mb-4">
-                Quick facts about me:
-              </h3>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>
-                  Bachelor of Engineering in Electronics and Communication
-                </li>
-                <li>Front End Engineer at Gym Force</li>
-                <li>Passionate about creating exceptional user experiences</li>
-                <li>Continuously learning and growing as a developer</li>
-              </ul>
+      <ScrollAnimation>
+        <section
+          className="container mx-auto lg:max-w-[70%] px-4 py-12 md:py-20"
+          id="about"
+        >
+          <div className=" mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">About me</h2>
+            <div className="space-y-6">
+              <p>
+                I'm a passionate Front End Engineer with expertise in Next.js,
+                TypeScript, TailwindCSS, React.js and RizzUI. I'm dedicated to
+                maintaining robust web applications while implementing
+                innovative features that elevate user experience.
+              </p>
+              <p>
+                My journey in web development began during my engineering
+                studies, and I've since grown my skills through internships and
+                professional roles. I enjoy collaborating with teams to build
+                efficient, user-friendly applications that solve real problems.
+              </p>
+              <p>
+                I'm constantly learning and improving my skills to stay current
+                with the latest web development technologies and best practices.
+              </p>
+              <div className="pt-4">
+                <h3 className="text-xl font-semibold mb-4">
+                  Quick facts about me:
+                </h3>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>
+                    Bachelor of Engineering in Electronics and Communication
+                  </li>
+                  <li>Front End Engineer at Gym Force</li>
+                  <li>
+                    Passionate about creating exceptional user experiences
+                  </li>
+                  <li>Continuously learning and growing as a developer</li>
+                </ul>
+              </div>
+              <p className="pt-4">
+                I'm available for freelance work and new opportunities.
+              </p>
             </div>
-            <p className="pt-4">
-              I'm available for freelance work and new opportunities.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       {/* Skills Section */}
-      <section
-        className="container mx-auto lg:max-w-[70%]  px-4 py-16 md:py-24 bg-muted/30"
-        id="skills"
-      >
-        <div className=" mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
-          <p className="text-center mb-12">
-            The technologies and tools I specialize in:
-          </p>
+      <ScrollAnimation>
+        <section
+          className="container mx-auto lg:max-w-[70%]  px-4 py-16 md:py-24 bg-muted/30"
+          id="skills"
+        >
+          <div className=" mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+            <p className="text-center mb-12">
+              The technologies and tools I specialize in:
+            </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
-            {skills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex flex-col items-center gap-2"
-              >
-                <div className="w-16 h-16 flex items-center justify-center bg-background rounded-full shadow-sm">
-                  {skill.icon}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+              {skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <div className="w-16 h-16 flex items-center justify-center bg-background rounded-full shadow-sm">
+                    {skill.icon}
+                  </div>
+                  <span className="font-medium">{skill.name}</span>
                 </div>
-                <span className="font-medium">{skill.name}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       {/* Experience Section */}
-      <section
-        className="container mx-auto lg:max-w-[70%]  px-4 py-16 md:py-24"
-        id="experience"
-      >
-        <div className=" mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
-          <p className="text-center mb-12">My professional journey:</p>
+      <ScrollAnimation>
+        <section
+          className="container mx-auto lg:max-w-[70%]  px-4 py-16 md:py-24"
+          id="experience"
+        >
+          <div className=" mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
+            <p className="text-center mb-12">My professional journey:</p>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <Card key={index} className="border-none shadow-md">
-                <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-                    <div className="md:w-24">
-                      <div className="w-16 h-16 flex items-center justify-center bg-muted rounded-md">
-                        {exp.logo}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <div>
-                          <h3 className="text-xl font-bold">{exp.role}</h3>
-                          <p className="text-muted-foreground">{exp.company}</p>
+            <div className="space-y-12">
+              {experiences.map((exp, index) => (
+                <Card key={index} className="border-none shadow-md">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                      <div className="md:w-24">
+                        <div className="w-16 h-16 flex items-center justify-center bg-muted rounded-md">
+                          {exp.logo}
                         </div>
-                        <p className="text-muted-foreground">{exp.period}</p>
                       </div>
-                      <ul className="list-disc pl-5 space-y-2">
-                        {exp.responsibilities.map((resp, idx) => (
-                          <li key={idx}>{resp}</li>
-                        ))}
-                      </ul>
+                      <div className="flex-1">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                          <div>
+                            <h3 className="text-xl font-bold">{exp.role}</h3>
+                            <p className="text-muted-foreground">
+                              {exp.company}
+                            </p>
+                          </div>
+                          <p className="text-muted-foreground">{exp.period}</p>
+                        </div>
+                        <ul className="list-disc pl-5 space-y-2">
+                          {exp.responsibilities.map((resp, idx) => (
+                            <li key={idx}>{resp}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
+        </section>
+      </ScrollAnimation>
       {/* Education Section */}
-      <section
-        className="container mx-auto lg:max-w-[70%] px-4 py-16 md:py-24 bg-muted/30"
-        id="education"
-      >
-        <div className=" mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
-          <Card className="border-none shadow-md">
-            <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-                <div className="md:w-24">
-                  <div className="w-16 h-16 flex items-center justify-center bg-muted rounded-md">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="lucide lucide-graduation-cap"
-                    >
-                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                      <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold">
-                        Bachelor of Engineering - (ECE)
-                      </h3>
-                      <p className="text-muted-foreground">
-                        KPR Institute of Engineering and Technology
-                      </p>
+      <ScrollAnimation>
+        {" "}
+        <section
+          className="container mx-auto lg:max-w-[70%] px-4 py-16 md:py-24 bg-muted/30"
+          id="education"
+        >
+          <div className=" mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
+            <Card className="border-none shadow-md">
+              <CardContent className="p-6">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                  <div className="md:w-24">
+                    <div className="w-16 h-16 flex items-center justify-center bg-muted rounded-md">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-graduation-cap"
+                      >
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
+                      </svg>
                     </div>
-                    <p className="text-muted-foreground">08/2019 - 04/2023</p>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold">
+                          Bachelor of Engineering - (ECE)
+                        </h3>
+                        <p className="text-muted-foreground">
+                          KPR Institute of Engineering and Technology
+                        </p>
+                      </div>
+                      <p className="text-muted-foreground">08/2019 - 04/2023</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      </ScrollAnimation>
 
       {/* Projects Section */}
-      <section
-        className="container mx-auto lg:max-w-[70%] px-4 py-16 md:py-24"
-        id="work"
-      >
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
-          <p className="text-center mb-12">Some of my notable projects:</p>
+      <ScrollAnimation>
+        <section
+          className="container mx-auto lg:max-w-[70%] px-4 py-16 md:py-24"
+          id="work"
+        >
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+            <p className="text-center mb-12">Some of my notable projects:</p>
 
-          <div className="space-y-16">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden border-none shadow-md"
-              >
-                <CardContent className="p-0">
-                  <div className="flex flex-col md:flex-row">
-                    <div
-                      className={`md:w-1/2 ${
-                        index % 2 === 1 ? "md:order-2" : ""
-                      }`}
-                    >
-                      <div className="relative h-64 md:h-full">
-                        <Image
-                          src={
-                            project.image ||
-                            "/placeholder.svg?height=400&width=600"
-                          }
-                          alt={project.title}
-                          fill
-                          className="object-fit"
-                        />
+            <div className="space-y-16">
+              {projects.map((project, index) => (
+                <Card
+                  key={index}
+                  className="overflow-hidden border-none shadow-md"
+                >
+                  <CardContent className="p-0">
+                    <div className="flex flex-col md:flex-row">
+                      <div
+                        className={`md:w-1/2 ${
+                          index % 2 === 1 ? "md:order-2" : ""
+                        }`}
+                      >
+                        <div className="relative h-64 md:h-full">
+                          <Image
+                            src={
+                              project.image ||
+                              "/placeholder.svg?height=400&width=600"
+                            }
+                            alt={project.title}
+                            fill
+                            className="object-fit"
+                          />
+                        </div>
+                      </div>
+                      <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
+                        <h3 className="text-2xl font-bold mb-2">
+                          {project.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-6">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {project.technologies.map((tech) => (
+                            <Badge key={tech} variant="outline">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                        <div className="flex gap-4">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className={project.link ? "" : "hidden"}
+                          >
+                            <Link href={project.link || ""}>View Project</Link>
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className={project.github ? "" : "hidden"}
+                          >
+                            <Link href={project.github || ""}>GitHub</Link>
+                          </Button>
+                        </div>
                       </div>
                     </div>
-                    <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
-                      <h3 className="text-2xl font-bold mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-6">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {project.technologies.map((tech) => (
-                          <Badge key={tech} variant="outline">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                      <div className="flex gap-4">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className={project.link ? "" : "hidden"}
-                        >
-                          <Link href={project.link || ""}>View Project</Link>
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className={project.github ? "" : "hidden"}
-                        >
-                          <Link href={project.github || ""}>GitHub</Link>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       {/* Contact Section */}
       <section
