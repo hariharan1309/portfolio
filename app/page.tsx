@@ -11,6 +11,14 @@ import ProfileImg from "@/public/Profile.jpg";
 import ScrollAnimation from "@/components/ScrollAnimation";
 
 export default function Home() {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Hari_Resume.pdf"; // Path to your file in public directory
+    link.download = "HariharanA_Resume.pdf"; // Name for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <main className="min-h-screen bg-background max-sm:p-4 max-xl:p-6">
       {/* Hero Section */}
@@ -22,16 +30,18 @@ export default function Home() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold">
-           {` Hi, I'm Hariharan A`}
+            {` Hi, I'm Hariharan A`}
           </h1>
           <p className="text-lg text-muted-foreground">
-           {` I'm a Front End Engineer with expertise in Next.js, TypeScript,
+            {` I'm a Front End Engineer with expertise in Next.js, TypeScript,
             TailwindCSS, React.js and RizzUI. Dedicated to maintaining robust
             web applications while implementing innovative features that elevate
             user experience.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="w-full sm:w-auto">Download CV</Button>
+            <Button className="w-full sm:w-auto" onClick={handleDownload}>
+              Download CV
+            </Button>
             <div className="sm:hidden">
               <Button variant="outline" className="w-full sm:w-auto">
                 <Link href={"tel:+919344628710"}>Contact Me</Link>
@@ -100,7 +110,7 @@ export default function Home() {
                 </ul>
               </div>
               <p className="pt-4">
-               {` I'm available for freelance work and new opportunities.`}
+                {` I'm available for freelance work and new opportunities.`}
               </p>
             </div>
           </div>
@@ -221,7 +231,9 @@ export default function Home() {
                           KPR Institute of Engineering and Technology
                         </p>
                       </div>
-                      <p className="text-muted-foreground">Aug 2019 - Apr 2023</p>
+                      <p className="text-muted-foreground">
+                        Aug 2019 - Apr 2023
+                      </p>
                     </div>
                   </div>
                 </div>
