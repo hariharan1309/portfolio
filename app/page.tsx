@@ -13,8 +13,8 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 export default function Home() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Hari_Resume.pdf"; // Path to your file in public directory
-    link.download = "HariharanA_Resume.pdf"; // Name for the downloaded file
+    link.href = "/Resume.pdf"; // Path to your file in public directory
+    link.download = "Hariharan_A_Resume.pdf"; // Name for the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
