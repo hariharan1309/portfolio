@@ -33,10 +33,9 @@ export default function Home() {
             {` Hi, I'm Hariharan A`}
           </h1>
           <p className="text-lg text-muted-foreground">
-            {` I'm a Front End Engineer with expertise in Next.js, TypeScript,
-            TailwindCSS, React.js and RizzUI. Dedicated to maintaining robust
-            web applications while implementing innovative features that elevate
-            user experience.`}
+            {`Front End Engineer with expertise in Next.js, TypeScript, TailwindCSS, React.js and RizzUI. Dedicated to maintaining
+            robust web applications while implementing innovative features that elevate user experience. Also proficient in
+            Express.js and MongoDB through personal projects.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="w-full sm:w-auto" onClick={handleDownload}>
