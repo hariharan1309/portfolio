@@ -385,7 +385,7 @@ const experiences = [
   {
     role: "Frontend Engineer",
     company: "GymForce Technologies",
-    period: "Sep 2024 - Present",
+    period: "Sep 2024 - Apirl 2025",
     logo: <span className="text-xl">GF</span>,
     responsibilities: [
       "Maintaining and Enhancing web applications while delivering new features for improved user experience.",
