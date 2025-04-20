@@ -378,6 +378,8 @@ const skills = [
   { name: "TypeScript", icon: <span className="text-2xl">TS</span> },
   { name: "TailwindCSS", icon: <span className="text-2xl">T</span> },
   { name: "Node.js", icon: <span className="text-2xl">N</span> },
+  { name: "Express.js", icon: <span className="text-2xl">E</span> },
+  { name: "MongoDB", icon: <span className="text-2xl">M</span> },
 ];
 
 const experiences = [
@@ -440,5 +442,12 @@ const projects = [
     ],
     link: "https://staycation-eight-delta.vercel.app/",
     github: "https://github.com/hariharan1309/staycation",
+  },
+  {
+    title: "Subscription Management System",
+    description:
+      "This project is a comprehensive subscription management system with user authentication, subscription handling, and robust error management. The system allows users to sign up, log in, and manage their subscriptions with various features including upcoming renewal notifications and subscription status management.",
+    technologies: ["Express.js", "MongoDB", "Node.js"],
+    github: "https://github.com/hariharan1309/subscription-tracker-express",
   },
 ];
